@@ -8,9 +8,9 @@
 4. For example, it checks all paths of cost 1 before checking any paths of cost 2.
 5. The frontier grows quickly because it includes every possible node. BFS pays the memory cost upfront, finding the shortest solution every time but checking every possible solution that's shorter than it first. The algorithm has a high space complexity, which means it can be unsuitable as-is for larger problems.
 6. The frontier grows quickly because it includes every possible node. BFS pays the memory cost upfront, finding the shortest solution every time but checking every possible solution that's shorter than it first. The naive algorithm essentially trades efficiency for correctness.
-7. 
-8. 
-9. 
+7. The DFS has a maximum frontier size of 85 while BFS has a maximum frontier size of 25134. DFS in this case would work by exploring actions until it reaches a solution rather than exploring all possible actions first at a given node before moving on the next node. Since a DFS reaching a solution in less actions, it uses significantly less memory storing the explored nodes. Using less memory for a task is beneficial most of the time as you can then allocate more resources into other tasks. Simply, it is more efficient to use an algorithm that gets the desired result with the least amount of resources (in this case it was be DFS). 
+8. It was not the optimal solution. DFS doesn't order its search so that it searches possible solutions that are short before ones that are long, so it can find long solutions first. DFS might find a poor solution in a scenario such as finding a path from one city to another where path cost can be high for individual connections, or perhaps in a scenario where it can get stuck in an infinitely deep search space.
+9. A path could theoretically go so deep that it is blatantly not optimal, or it can just not end altogether. Without the limit, the algorithm would just keep exploring one path and will not explore the other possibilities, therefore being incomplete. 
 10. It always expands the node with the lowest cost, tie-breaking using the distance from the origin (farther is better). This will always result in an optimal solution since it searches the solution space in order of total cost.
 11. It takes a longer route. It's both the shortest path and the one with the lowest cost, though UCS chose it for its low cost.
 12. They perform identically when actions always have the same cost, like with the 8-puzzle. UCS performs better when actions have different costs, like with route-finding on a map with different-length roads.
