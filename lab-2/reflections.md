@@ -1,6 +1,6 @@
 # Names: Paul, Jenessy
-# Lab: lab1 (Intelligent Agents)
-# Date: 1/19/26
+# Lab: lab2 (Search/Problem-Solving)
+# Date: 1/23/26
 
 1. If any of those components are missing, the search algorithm may not be able to find a solution or it may find an invalid solution.
 2. It's easy to access elements. It's a little less computationally efficient, since every time the algorithm needs the row/column number of a specific element, it has to calculate them--you wouldn't need that in a 2D array. At the same time, it's easier to *find* a specific element (just use `index()`).
