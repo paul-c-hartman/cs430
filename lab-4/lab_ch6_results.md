@@ -1,6 +1,6 @@
 # Names: Paul, Jenessy
 # Lab: lab3 (CSP)
-# Date: Today's date
+# Date: 2/18/26
 
 1. Each constraint applies to 9 variables, and constraints that apply to more than 2 variables can be reduced to only binary constraints. For instance, the constraint "all variables in this row must be different" is the same as a bunch of binary restraints that say "this cell must be different from that one."
   
@@ -39,4 +39,10 @@
 
 17. Part of what makes N-queens amenable to local search is how much each decision constrains other variables. In Sudoku, a full solution often has 40 or 60 decisions, while a 9-queens problem (with the same size board) only has 9. Problems like N-queens do not have local optima that are not global optima so a local-search approach won't get stuck, as opposed to Sudoku which has so many constraints that it will get stuck, requiring a backtracking approach.
 
-18. 
+18. The declarative approach involves specifying what a solution should look like, while a procedural backtracking approach involves specifically telling the algorithm how to solve the specific problem (e.g. when to forward check, backtrack, etc.).
+
+   The procedural approach has the advantage of using knowledge about the specific problem, increasing efficiency. You have more control over how the algorithm approaches the problem, especially heuristics. This also makes debugging easier. The declarative approach has the advantage of being simpler to implement and faster overall, especially with more complex problems, while giving you less control over the algorithm's approach to the problem.
+
+19. The Distinct() constraint can be more efficient than pairwise checking by updating every variable's domain in one step rather than updating the domain of each variable at a time when a variable in the constraint is assigned. Arc consistency is preserved while its verification is simplified.
+
+20. CDCL remembers patterns that result in backtracking, functioning similarly to a heuristic that learns over time. It ends up having to explore the search tree less since its ability to remember past failures helps it skip branches more aggressively than plain backtracking. It's not pruning, just prioritizing certain branches over others. The end result is that CDCL "learns" which constraints are important to satisfy first to avoid backtracking.
